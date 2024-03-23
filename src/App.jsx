@@ -1,7 +1,7 @@
 import './App.css'
 import Manager from './components/Manager'
 import Navbar from './components/Navbar'
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 function App() {
   const [password, setPassword] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
@@ -32,17 +32,19 @@ function App() {
   };
   if (!loggedIn) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-100">
-        <div className="bg-white p-8 rounded shadow-md max-w-md w-full">
-          <h1 className="text-2xl mb-6">Login</h1>
+
+      <div className="flex relative z-10 items-center justify-center min-h-screen bg-gray-400">
+        <img src="https://w.wallhaven.cc/full/y8/wallhaven-y8g5kg.png" className='absolute w-screen h-screen object-cover object-center z-[-10]' alt="" />
+        <div className="bg-transparent p-8 rounded shadow-2xl max-w-md w-full">
+          <h1 className="text-2xl mb-6 text-black">Welcome @mudasarmajeed5</h1>
           <form onSubmit={handleSubmit}>
-            <label className='text-black text-center text-xl ' htmlFor="auth">Enter your password</label>
+            <label className='text-black text-center text-sm ' htmlFor="auth">Enter your password:</label>
             <input
               type="password"
               placeholder="Enter password"
               value={password}
               onChange={handlePasswordChange}
-              className="p-2 mb-4 border rounded w-full text-black"
+              className="p-2 mb-4 rounded w-full bg-transparent text-white font-bold"
             />
             <button
               type="submit"
@@ -53,6 +55,7 @@ function App() {
           </form>
         </div>
       </div>
+
     );
   }
 
@@ -60,7 +63,7 @@ function App() {
   return (
     <>
       <Navbar onLogout={handleLogout} />
-      <Manager/>
+      <Manager />
     </>
   )
 }

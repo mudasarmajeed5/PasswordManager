@@ -85,14 +85,14 @@ const Manager = () => {
             <div className='mx-auto'>
                 <h1 className='text-center text-2xl mt-5 mb-2 text-green-500'>Password Manager</h1>
                 <p className='text-center text-sm'>Your own password manager</p>
-                <div className="flex flex-col p-4 w-full">
+                <div className="flex flex-col p-4 w-full md:w-3/5 mx-auto">
                     <div>
                         <input name='site' onChange={handleChange} value={form.site} placeholder='Enter website URL' className='rounded-lg w-full px-2 py-1 bg-transparent border text-white' type="text" />
                     </div>
-                    <div className="mt-2 flex gap-2">
-                        <input name='username' onChange={handleChange} value={form.username} placeholder='Enter Username' className='w-4/6 mr-4 px-2 py-1 rounded-lg bg-transparent border text-white' type="text" />
-                        <div className="relative">
-                            <input name='password' onChange={(e) => { handleChange(e) }} value={form.password} placeholder='Password' className='w-full px-2 py-1 rounded-lg bg-transparent border text-white' type="text" />
+                    <div className="mt-2 flex gap-2 md:justify-between">
+                        <input name='username' onChange={handleChange} value={form.username} placeholder='Enter Username' className='w-4/6 px-2 py-1 rounded-lg bg-transparent border text-white' type="text" />
+                        <div className="relative flex w-2/5">
+                            <input name='password' onChange={(e) => { handleChange(e) }} value={form.password} placeholder='Password' className='w-full px-2 py-1  rounded-lg bg-transparent border text-white' type="text" />
                             <button onClick={showPassword} className="absolute right-0 top-0 px-2 py-1">
                                 Show
                             </button>
