@@ -1,7 +1,7 @@
 import './App.css';
 import Manager from './components/Manager';
 import Navbar from './components/Navbar';
-import PassKeysLogin from './Todo-backend.jpg';
+import PassKeysLogin from './Todo-backend.png';
 import { useState, useEffect } from 'react';
 function App() {
   const [password, setPassword] = useState('');
@@ -35,8 +35,8 @@ function App() {
     return (
 
       <div className="flex relative z-10 items-center justify-center min-h-screen bg-gray-400">
-        <img src={PassKeysLogin.src} className='absolute w-screen h-screen object-cover object-center z-[-10]' alt="" />
-        <div className="bg-transparent p-8 rounded shadow-2xl max-w-md w-full">
+        <img src={PassKeysLogin} className='absolute w-screen h-screen object-cover object-center z-[-10]' alt="" />
+        <div className="p-8 filterblur rounded shadow-2xl max-w-md w-full">
           <h1 className="text-2xl mb-6 text-black">Welcome @mudasarmajeed5</h1>
           <form onSubmit={handleSubmit}>
             <label className='text-black text-center text-sm ' htmlFor="auth">Enter your password:</label>
@@ -45,7 +45,7 @@ function App() {
               placeholder="Enter password"
               value={password}
               onChange={handlePasswordChange}
-              className="p-2 mb-4 rounded w-full bg-transparent text-white font-bold"
+              className="p-2 mb-4 rounded-lg w-full bg-transparent text-white border"
             />
             <button
               type="submit"
