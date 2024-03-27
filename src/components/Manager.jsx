@@ -39,7 +39,7 @@ const Manager = () => {
 
         if (form.site[0].includes(".")) {
             setpasswordArray([...passwordArray, { ...form, id: uuidv4() }]);
-            await fetch("http://localhost:3000/", { method: "POST", headers: { "Content-Type": "Application/json" }, body: JSON.stringify({ ...form, id: uuidv4() }) });
+            await fetch("https://lazy-red-gosling-wear.cyclic.app/", { method: "POST", headers: { "Content-Type": "Application/json" }, body: JSON.stringify({ ...form, id: uuidv4() }) });
             setform({ site: "", username: "", password: "" })
             copied("Password Added");
         }
@@ -55,7 +55,7 @@ const Manager = () => {
         let dialog = confirm("Do you want to delete the password?");
         if (dialog) {
             setpasswordArray(passwordArray.filter(item => item.id !== id));
-            await fetch("http://localhost:3000", { method: "DELETE", headers: { "Content-Type": "Application/json" }, body: JSON.stringify({ id }) });
+            await fetch("https://lazy-red-gosling-wear.cyclic.app/", { method: "DELETE", headers: { "Content-Type": "Application/json" }, body: JSON.stringify({ id }) });
 
         }
     }
