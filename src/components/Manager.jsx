@@ -18,7 +18,7 @@ const Manager = () => {
     const [passwordArray, setpasswordArray] = useState([]);
 
     const getPasswords = async () => {
-        let request = await fetch('http://localhost:3000/')
+        let request = await fetch('https://lazy-red-gosling-wear.cyclic.app/')
         let passwords = await request.json();
         setpasswordArray(passwords)
         console.log(passwords);
@@ -38,8 +38,6 @@ const Manager = () => {
     const SavePassword = async () => {
 
         if (form.site[0].includes(".")) {
-            await fetch(`http://localhost:3000/`, { method: "DELETE", headers: { "Content-Type": "Application/json" }, body: JSON.stringify({ id: form.id }) });
-            
             setpasswordArray([...passwordArray, { ...form, id: uuidv4() }]);
             await fetch("http://localhost:3000/", { method: "POST", headers: { "Content-Type": "Application/json" }, body: JSON.stringify({ ...form, id: uuidv4() }) });
             setform({ site: "", username: "", password: "" })
